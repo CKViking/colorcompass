@@ -85,22 +85,22 @@ function createTranslatedQuestions(langQuestionTexts) {
 };
 
 const deQuestionTexts = {
-    q1_text: "Im beruflichen Alltag fühlst du dich am produktivsten, wenn du...",
-    q1_1a: "deine Energie in neue, ergebnisorientierte Projekte stecken kannst.", 
-    q1_1b: "innovative Konzepte entwickeln und im Team präsentieren kannst.", 
-    q1_1c: "ein harmonisches und stabiles Arbeitsumfeld für alle sicherstellen kannst.", 
-    q1_1d: "komplexe Sachverhalte detailliert analysieren und präzise planen kannst.",
-    q2_text: "Bei Meinungsverschiedenheiten im Team neigst du dazu,...",
-    q2_2a: "deinen Standpunkt klar zu vertreten und eine schnelle Entscheidung anzustreben.", 
+    q1_text: "Im beruflichen Alltag fühlen Sie sich am produktivsten, wenn Sie...",
+    q1_1a: "Ihre Energie in neue, ergebnisorientierte Projekte stecken können.", 
+    q1_1b: "innovative Konzepte entwickeln und im Team präsentieren können.", 
+    q1_1c: "ein harmonisches und stabiles Arbeitsumfeld für alle sicherstellen können.", 
+    q1_1d: "komplexe Sachverhalte detailliert analysieren und präzise planen können.",
+    q2_text: "Bei Meinungsverschiedenheiten im Team neigen Sie dazu,...",
+    q2_2a: "Ihren Standpunkt klar zu vertreten und eine schnelle Entscheidung anzustreben.", 
     q2_2b: "mit kreativen Ansätzen oder Humor die Situation aufzulockern und neue Perspektiven zu eröffnen.", 
     q2_2c: "einen Konsens zu suchen und auf ein gutes Miteinander zu achten.", 
-    q2_2d: "dich zunächst zurückzuziehen, um die verschiedenen Argumente objektiv zu bewerten.",
-    q3_text: "Kollegen würden deine Arbeitsweise am ehesten als _______ beschreiben.",
+    q2_2d: "sich zunächst zurückzuziehen, um die verschiedenen Argumente objektiv zu bewerten.",
+    q3_text: "Kollegen würden Ihre Arbeitsweise am ehesten als _______ beschreiben.",
     q3_3a: "zielorientiert und durchsetzungsstark.", 
     q3_3b: "inspirierend und ideenreich.", 
     q3_3c: "kooperativ und zuverlässig.", 
     q3_3d: "analytisch und gewissenhaft.",
-    q4_text: "Wenn du ein neues berufliches Projekt startest, fokussierst du dich zuerst auf...",
+    q4_text: "Wenn Sie ein neues berufliches Projekt starten, fokussieren Sie sich zuerst auf...",
     q4_4a: "die schnelle Umsetzung erster Schritte und das Erreichen sichtbarer Meilensteine.", 
     q4_4b: "das Brainstorming vielfältiger Ideen und unkonventioneller Lösungsansätze.", 
     q4_4c: "den Aufbau eines tragfähigen Plans und die Sicherstellung der notwendigen Ressourcen und Teamabstimmung.", 
@@ -205,11 +205,11 @@ const deQuestionTexts = {
     q24_24b: "dass sie flexibel gehandhabt werden sollten, um Innovation und neue Ideen nicht zu behindern.", 
     q24_24c: "dass sie wichtig sind, um ein faires und stabiles Arbeitsumfeld für alle zu gewährleisten.", 
     q24_24d: "dass sie notwendig sind, um Effizienz, Qualität und Präzision in den Arbeitsabläufen zu sichern.",
-    q25_text: "Beruflich sind Sie am zufriedensten, wenn Sie...",
-    q25_25a: "ein anspruchsvolles Ziel erreicht und Ihre Wettbewerbsfähigkeit unter Beweis gestellt haben.", 
-    q25_25b: "etwas Neues und Aufregendes initiiert und andere mit Ihrer Begeisterung angesteckt haben.", 
+    q25_text: "Beruflich bist du am zufriedensten, wenn du...",
+    q25_25a: "ein anspruchsvolles Ziel erreicht und deine Wettbewerbsfähigkeit unter Beweis gestellt hast.", 
+    q25_25b: "etwas Neues und Aufregendes initiiert und andere mit deiner Begeisterung angesteckt hast.", 
     q25_25c: "anderen Kollegen geholfen, positive Beziehungen im Team gepflegt und zur Harmonie beigetragen haben.", 
-    q25_25d: "ein komplexes Problem gründlich analysiert, verstanden und eine qualitativ hochwertige Lösung implementiert haben.",
+    q25_25d: "ein komplexes Problem gründlich analysiert, verstanden und eine qualitativ hochwertige Lösung implementiert hast.",
 };
 const enQuestionTexts = { 
     q1_text: "In your professional life, you feel most productive when you can...",
@@ -1267,7 +1267,8 @@ function App() {
 
     } else { 
         const firstColorDetails = currentCDs[first.name].characteristics;
-        const secondColorDetails = currentCDs[second.name].characteristics;
+        // Fix: Declare secondColorDetails only if second.percentage > 20
+        // const secondColorDetails = currentCDs[second.name].characteristics; // Original problematic line
 
         assessment = assessmentTextParts.dominantProfileIntro(
             currentCDs[first.name].name, first.percentage.toFixed(1),
@@ -1280,6 +1281,7 @@ function App() {
         );
 
         if (second.percentage > 20) { 
+            const secondColorDetails = currentCDs[second.name].characteristics; // Moved declaration here
             assessment += assessmentTextParts.secondaryPreference(
                 currentCDs[second.name].name, secondColorDetails.strengths, secondColorDetails.motivation,
                 secondColorDetails.communication, secondColorDetails.challenges
