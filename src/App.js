@@ -1236,7 +1236,7 @@ function App() {
         assessment += `- <strong>${currentCDs[fourth.name].name}:</strong> ${fourth.percentage.toFixed(1)}% <br /><br />`;
 
         const firstColorDetails = currentCDs[first.name].characteristics;
-        const secondColorDetails = currentCDs[second.name].characteristics;
+        const secondColorDetails = currentCDs[second.name].characteristics; // Declared for use in combo texts
 
         if (first.percentage - second.percentage > 3) { 
              assessment += assessmentTextParts.balancedStrongestEmphasis(
@@ -1267,8 +1267,7 @@ function App() {
 
     } else { 
         const firstColorDetails = currentCDs[first.name].characteristics;
-        // Fix: Declare secondColorDetails only if second.percentage > 20
-        // const secondColorDetails = currentCDs[second.name].characteristics; // Original problematic line
+        
 
         assessment = assessmentTextParts.dominantProfileIntro(
             currentCDs[first.name].name, first.percentage.toFixed(1),
@@ -1281,7 +1280,7 @@ function App() {
         );
 
         if (second.percentage > 20) { 
-            const secondColorDetails = currentCDs[second.name].characteristics; // Moved declaration here
+            const secondColorDetails = currentCDs[second.name].characteristics; // Declared here as it's used
             assessment += assessmentTextParts.secondaryPreference(
                 currentCDs[second.name].name, secondColorDetails.strengths, secondColorDetails.motivation,
                 secondColorDetails.communication, secondColorDetails.challenges
