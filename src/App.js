@@ -441,10 +441,10 @@ const translations = {
     },
     questionTexts: deQuestionTexts,
     ratingLabels: [
-      { value: 6, label: "Trifft sehr zu", short: "Sehr zu", suffix: "sehr zu" },
-      { value: 3, label: "Trifft zu", short: "Zu", suffix: "zu" },
-      { value: 2, label: "Trifft weniger zu", short: "Weniger zu", suffix: "weniger zu" },
-      { value: 0, label: "Trifft am wenigsten zu", short: "Gar nicht", suffix: "gar nicht zu" },
+      { value: 6, label: "Trifft sehr zu", short: "Sehr zu", suffix: "sehr zu", mobileSuffix: "Absolut" },
+      { value: 3, label: "Trifft zu", short: "Zu", suffix: "zu", mobileSuffix: "Ja" },
+      { value: 2, label: "Trifft weniger zu", short: "Weniger zu", suffix: "weniger zu", mobileSuffix: "Naja" },
+      { value: 0, label: "Trifft am wenigsten zu", short: "Gar nicht", suffix: "gar nicht zu", mobileSuffix: "Eher nein" },
     ],
     colorDescriptions: {
       Dynamikrot: { name: "Dynamikrot", description: "Deutet Energie, Durchsetzungskraft und Entschlossenheit an. Zielstrebig, energiegeladen, handlungsorientiert.", colorClass: "bg-red-500", textClass: "text-red-600", borderClass: "border-red-500", characteristics: { strengths: "entschlossen, willensstark, ergebnisorientiert, direkt, wettbewerbsorientiert, schnell entscheidend", challenges: "ungeduldig, kann andere überfordern, geringe Detailorientierung bei Routine, risikofreudig, kann Gefühle anderer übersehen", motivation: "Ergebnisse, Herausforderung, Kontrolle, Gewinnen, Unabhängigkeit", communication: "direkt, auf den Punkt, fordernd, ergebnisorientiert"}},
@@ -547,10 +547,10 @@ const translations = {
     },
     questionTexts: enQuestionTexts, 
     ratingLabels: [
-      { value: 6, label: "Applies very much", short: "Very much", suffix: "very much" },
-      { value: 3, label: "Applies", short: "Applies", suffix: "applies" },
-      { value: 2, label: "Applies less", short: "Less so", suffix: "less so" },
-      { value: 0, label: "Applies least", short: "Not at all", suffix: "not at all" },
+      { value: 6, label: "Applies very much", short: "Very much", suffix: "very much", mobileSuffix: "Absolutely" },
+      { value: 3, label: "Applies", short: "Applies", suffix: "applies", mobileSuffix: "Yes" },
+      { value: 2, label: "Applies less", short: "Less so", suffix: "less so", mobileSuffix: "So-so" },
+      { value: 0, label: "Applies least", short: "Not at all", suffix: "not at all", mobileSuffix: "Rather not" },
     ],
     colorDescriptions: {
       Dynamikrot: { name: "Dynamic Red", description: "Suggests energy, assertiveness, and determination. Goal-oriented, energetic, action-oriented.", colorClass: "bg-red-500", textClass: "text-red-600", borderClass: "border-red-500", characteristics: { strengths: "decisive, strong-willed, results-oriented, direct, competitive, quick decision-maker", challenges: "impatient, can overwhelm others, low detail orientation in routine tasks, risk-taker, can overlook others' feelings", motivation: "results, challenge, control, winning, independence", communication: "direct, to the point, demanding, results-oriented"}},
@@ -655,7 +655,7 @@ const LanguageSwitcher = ({ currentLanguage, onChangeLanguage }) => {
 const IntroductionPage = ({ onStartQuiz, currentLangData }) => {
   const { introductionPage, colorDescriptions: currentCDs, ratingLabels: currentRLs, appName, startQuiz } = currentLangData;
   return (
-    <div className="bg-white p-6 md:p-8 rounded-xl shadow-2xl w-full max-w-3xl text-center animate-fadeIn">
+    <div className="bg-white p-4 md:p-8 rounded-xl shadow-2xl w-full max-w-3xl text-center animate-fadeIn">
       <h1 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mb-6">{appName}</h1>
       <p className="text-base md:text-lg text-gray-700 mb-4">{introductionPage.appShortDescription}</p>
       <p className="text-base md:text-lg text-gray-700 mb-6">
@@ -685,9 +685,9 @@ const IntroductionPage = ({ onStartQuiz, currentLangData }) => {
       </p>
       <div className="text-left text-gray-700 mb-8 w-full bg-gray-50 p-4 rounded-lg border border-gray-200">
         {currentRLs.map(rl => (
-          <div key={rl.value} className="flex items-start mb-1 last:mb-0">
-            <span className="font-semibold w-48 shrink-0">{rl.label}:</span>
-            <span className="whitespace-nowrap">
+          <div key={rl.value} className="flex flex-col sm:flex-row sm:items-start mb-2 sm:mb-1 last:mb-0">
+            <span className="font-semibold sm:w-48 shrink-0 text-sm md:text-base">{rl.label}:</span>
+            <span className="whitespace-normal text-sm md:text-base sm:ml-2">
               {introductionPage.ratingExplanation[rl.value]}
             </span>
           </div>
@@ -735,8 +735,10 @@ const QuestionDisplay = ({
     return <div className="text-center p-8">Loading question...</div>;
   }
 
+  // Removed animate-fadeIn from the root div to prevent re-animation on rating clicks.
+  // The key on the QuestionDisplay instance in App.js will handle mount animation for new questions.
   return (
-    <div className="bg-white p-4 md:p-6 rounded-xl shadow-2xl w-full max-w-4xl">
+    <div className="bg-white p-4 md:p-6 rounded-xl shadow-2xl w-full max-w-4xl"> 
       <div className="mb-6">
         <div className="flex justify-between items-center text-sm text-gray-600 mb-1">
           <span>{progressLabel}</span>
@@ -771,13 +773,14 @@ const QuestionDisplay = ({
         </div>
       )}
 
-      <div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
+      {/* Desktop Table Layout */}
+      <div className="hidden md:block overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
         <table className="min-w-full w-full bg-white table-fixed">
           <thead className="sticky top-0 z-10">
             <tr className="bg-gray-100 text-gray-600 uppercase text-xs md:text-sm leading-normal">
-              <th className="py-3 px-2 md:px-4 text-left w-[calc(100%-360px)] md:w-[calc(100%-440px)]">{ratingTableHeader}</th>
+              <th className="py-3 px-2 md:px-4 text-left w-[calc(100%-360px)] lg:w-[calc(100%-440px)]">{ratingTableHeader}</th>
               {currentRatingLabels.map((rating) => (
-                <th key={rating.value} className="py-3 px-2 md:px-3 text-center w-[90px] md:w-[110px]" title={rating.label}>
+                <th key={rating.value} className="py-3 px-2 md:px-3 text-center w-[90px] lg:w-[110px]" title={rating.label}>
                     {ratingTableRatingColHeader}
                 </th>
               ))}
@@ -787,7 +790,6 @@ const QuestionDisplay = ({
             {shuffledOptions.map((option) => {
               const selectedScore = currentQuestionRatings[option.id];
               const usedScoresInQuestion = new Set(Object.values(currentQuestionRatings));
-
               return (
                 <tr key={option.id} className="border-b border-gray-200 hover:bg-gray-50 transition-colors duration-150">
                   <td className="py-3 px-2 md:px-4 text-left whitespace-normal break-words font-semibold">
@@ -824,6 +826,47 @@ const QuestionDisplay = ({
           </tbody>
         </table>
       </div>
+
+      {/* Mobile Card Layout */}
+      <div className="md:hidden space-y-4 mt-4">
+        <p className="text-center font-medium text-gray-600">{ratingTableRatingColHeader}</p>
+        {shuffledOptions.map((option) => {
+          const selectedScore = currentQuestionRatings[option.id];
+          const usedScoresInQuestion = new Set(Object.values(currentQuestionRatings));
+          return (
+            <div key={option.id} className="bg-gray-50 p-4 rounded-lg shadow border border-gray-200">
+              <p className="font-semibold text-gray-800 mb-3">{option.text}</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {currentRatingLabels.map((rating) => (
+                  <button
+                    key={rating.value}
+                    onClick={() => handleRatingChange(option.id, rating.value)}
+                    aria-label={`Bewerte "${option.text}" als "${rating.label}"`}
+                    title={rating.label}
+                    className={`
+                      w-full h-12 flex items-center justify-center rounded-md transition-all duration-200 ease-in-out 
+                      text-sm px-2 leading-tight text-center focus:outline-none focus:ring-2 focus:ring-offset-1
+                      transform hover:scale-105 active:scale-95
+                      ${selectedScore === rating.value
+                        ? 'bg-indigo-600 text-white shadow-md hover:bg-indigo-700 focus:ring-indigo-500'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300 focus:ring-gray-400'
+                      }
+                      ${(usedScoresInQuestion.has(rating.value) && selectedScore !== rating.value)
+                        ? 'opacity-40 cursor-not-allowed'
+                        : 'hover:shadow-sm'
+                      }
+                    `}
+                    disabled={usedScoresInQuestion.has(rating.value) && selectedScore !== rating.value}
+                  >
+                    {rating.mobileSuffix}
+                  </button>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
 
       <div className="flex flex-col sm:flex-row justify-between items-center mt-6 md:mt-8 space-y-3 sm:space-y-0 sm:space-x-3">
         <button
@@ -1236,7 +1279,9 @@ function App() {
         assessment += `- <strong>${currentCDs[fourth.name].name}:</strong> ${fourth.percentage.toFixed(1)}% <br /><br />`;
 
         const firstColorDetails = currentCDs[first.name].characteristics;
-        const secondColorDetails = currentCDs[second.name].characteristics; // Declared for use in combo texts
+        // secondColorDetails is not explicitly used here for its properties in the emphasis texts,
+        // but its name and percentage are used. Combo texts use names.
+        // const secondColorDetails = currentCDs[second.name].characteristics; 
 
         if (first.percentage - second.percentage > 3) { 
              assessment += assessmentTextParts.balancedStrongestEmphasis(
@@ -1268,7 +1313,6 @@ function App() {
     } else { 
         const firstColorDetails = currentCDs[first.name].characteristics;
         
-
         assessment = assessmentTextParts.dominantProfileIntro(
             currentCDs[first.name].name, first.percentage.toFixed(1),
             currentCDs[second.name].name, second.percentage.toFixed(1)
@@ -1280,7 +1324,7 @@ function App() {
         );
 
         if (second.percentage > 20) { 
-            const secondColorDetails = currentCDs[second.name].characteristics; // Declared here as it's used
+            const secondColorDetails = currentCDs[second.name].characteristics; 
             assessment += assessmentTextParts.secondaryPreference(
                 currentCDs[second.name].name, secondColorDetails.strengths, secondColorDetails.motivation,
                 secondColorDetails.communication, secondColorDetails.challenges
