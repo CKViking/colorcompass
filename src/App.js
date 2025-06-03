@@ -85,22 +85,22 @@ function createTranslatedQuestions(langQuestionTexts) {
 };
 
 const deQuestionTexts = {
-    q1_text: "Im beruflichen Alltag fühlen Sie sich am produktivsten, wenn Sie...",
-    q1_1a: "Ihre Energie in neue, ergebnisorientierte Projekte stecken können.", 
-    q1_1b: "innovative Konzepte entwickeln und im Team präsentieren können.", 
-    q1_1c: "ein harmonisches und stabiles Arbeitsumfeld für alle sicherstellen können.", 
-    q1_1d: "komplexe Sachverhalte detailliert analysieren und präzise planen können.",
-    q2_text: "Bei Meinungsverschiedenheiten im Team neigen Sie dazu,...",
-    q2_2a: "Ihren Standpunkt klar zu vertreten und eine schnelle Entscheidung anzustreben.", 
+    q1_text: "Im beruflichen Alltag fühlst du dich am produktivsten, wenn du...",
+    q1_1a: "deine Energie in neue, ergebnisorientierte Projekte stecken kannst.", 
+    q1_1b: "innovative Konzepte entwickeln und im Team präsentieren kannst.", 
+    q1_1c: "ein harmonisches und stabiles Arbeitsumfeld für alle sicherstellen kannst.", 
+    q1_1d: "komplexe Sachverhalte detailliert analysieren und präzise planen kannst.",
+    q2_text: "Bei Meinungsverschiedenheiten im Team neigst du dazu,...",
+    q2_2a: "deinen Standpunkt klar zu vertreten und eine schnelle Entscheidung anzustreben.", 
     q2_2b: "mit kreativen Ansätzen oder Humor die Situation aufzulockern und neue Perspektiven zu eröffnen.", 
     q2_2c: "einen Konsens zu suchen und auf ein gutes Miteinander zu achten.", 
-    q2_2d: "sich zunächst zurückzuziehen, um die verschiedenen Argumente objektiv zu bewerten.",
-    q3_text: "Kollegen würden Ihre Arbeitsweise am ehesten als _______ beschreiben.",
+    q2_2d: "dich zunächst zurückzuziehen, um die verschiedenen Argumente objektiv zu bewerten.",
+    q3_text: "Kollegen würden deine Arbeitsweise am ehesten als _______ beschreiben.",
     q3_3a: "zielorientiert und durchsetzungsstark.", 
     q3_3b: "inspirierend und ideenreich.", 
     q3_3c: "kooperativ und zuverlässig.", 
     q3_3d: "analytisch und gewissenhaft.",
-    q4_text: "Wenn Sie ein neues berufliches Projekt starten, fokussieren Sie sich zuerst auf...",
+    q4_text: "Wenn du ein neues berufliches Projekt startest, fokussierst du dich zuerst auf...",
     q4_4a: "die schnelle Umsetzung erster Schritte und das Erreichen sichtbarer Meilensteine.", 
     q4_4b: "das Brainstorming vielfältiger Ideen und unkonventioneller Lösungsansätze.", 
     q4_4c: "den Aufbau eines tragfähigen Plans und die Sicherstellung der notwendigen Ressourcen und Teamabstimmung.", 
@@ -361,17 +361,21 @@ const translations = {
     generalColorDescriptionsTitle: "Allgemeine Farbbeschreibungen:",
     importantNoticeTitle: "Wichtiger Hinweis:",
     importantNoticeText: "Diese Ergebnisse und Analysen dienen ausschließlich deiner Selbstreflexion und Unterhaltung. Sie stellen keine wissenschaftlich validierte psychologische Diagnose dar und sind nicht mit offiziellen Testverfahren oder anderen geschützten Systemen verbunden oder von diesen abgeleitet. Bitte interpretiere die Ergebnisse mit Bedacht.",
+    basisDisclaimer: "Das Konzept und die Inhalte dieser Anwendung basieren auf öffentlich zugänglichen Informationen und allgemeinen Veröffentlichungen zum Thema Persönlichkeitstests und Farbpsychologie.",
     restart: "Neustart",
     privacyPolicyLink: "Datenschutz",
     privacyPolicyButtonClose: "Schließen",
     progressLabel: "Fortschritt",
     questionLabel: (current, total) => `Frage ${current}${total ? ` von ${total}` : ''}`,
     ratingTableHeader: "Aussage",
-    ratingTableRatingColHeader: "Trifft...",
+    ratingTableRatingColHeader: "Trifft zu", 
     noResultsYet: "Bitte fülle zuerst den Fragebogen aus, um deine Ergebnisse zu sehen.",
+    shareableResultTitle: "Dein Farb-Profil zum Teilen:",
+    copyTypeButtonLabel: "Typ-Visualisierung kopieren",
+    copiedMessage: "Kopiert!",
     introductionPage: {
-        appShortDescription: "Entdecke deine beruflichen Persönlichkeitspräferenzen und erhalte eine erste Einschätzung deines Farbtyps.",
-        welcomeMessage: "Dieser Fragebogen hilft dir, deine Persönlichkeitspräferenzen basierend auf vier verschiedenen Farbtypen zu entdecken:",
+        appShortDescription: "Entdecke deine beruflichen Persönlichkeitspräferenzen! Dieser Fragebogen ermöglicht dir eine erste Einschätzung deines Persönlichkeitstyps im beruflichen Kontext anhand von vier verschiedenen Farbtypen und gibt dir Einblicke in typische Verhaltensweisen.",
+        welcomeMessage: "Dieser Fragebogen hilft dir, deine Persönlichkeitspräferenzen basierend auf vier verschiedenen Farbtypen zu entdecken:", // This line is effectively overridden by appShortDescription for the main intro text.
         instructionsHeader: "Für jede der folgenden Fragen wirst du vier Aussagen sehen. Bitte bewerte jede Aussage, je nachdem, wie sehr sie auf dich zutrifft, indem du jeder Aussage eine der folgenden Kategorien zuweist:",
         ratingExplanation: {
             6: "Dies beschreibt dich sehr gut.",
@@ -436,15 +440,16 @@ const translations = {
         yourRightsText2: "Du hast das Recht, eine erteilte Einwilligung jederzeit mit Wirkung für die Zukunft zu widerrufen (z.B. indem du die Seite verlässt).",
         cookiesTitle: "Cookies",
         cookiesText: "Diese Anwendung verwendet keine Cookies zur Verfolgung oder Analyse deines Verhaltens.",
+        basisDisclaimerPrivacy: "Das dieser Anwendung zugrundeliegende Konzept und die verwendeten Beschreibungen basieren auf öffentlich zugänglichen Informationen und allgemeinen Veröffentlichungen zum Thema Persönlichkeitstests und Farbpsychologie. Es besteht keine Verbindung zu spezifischen, geschützten Testverfahren.",
         finalRemarkTitle: "Schlussbemerkung",
         finalRemarkText: "Diese Datenschutzerklärung dient deiner Information."
     },
     questionTexts: deQuestionTexts,
     ratingLabels: [
-      { value: 6, label: "Trifft sehr zu", short: "Sehr zu", suffix: "sehr zu", mobileSuffix: "Absolut" },
-      { value: 3, label: "Trifft zu", short: "Zu", suffix: "zu", mobileSuffix: "Ja" },
-      { value: 2, label: "Trifft weniger zu", short: "Weniger zu", suffix: "weniger zu", mobileSuffix: "Naja" },
-      { value: 0, label: "Trifft am wenigsten zu", short: "Gar nicht", suffix: "gar nicht zu", mobileSuffix: "Eher nein" },
+      { value: 6, label: "Trifft sehr zu", short: "Sehr zu", suffix: "Absolut" },
+      { value: 3, label: "Trifft zu", short: "Zu", suffix: "Ja" },
+      { value: 2, label: "Trifft weniger zu", short: "Weniger zu", suffix: "Naja" },
+      { value: 0, label: "Trifft am wenigsten zu", short: "Gar nicht", suffix: "Eher nein" },
     ],
     colorDescriptions: {
       Dynamikrot: { name: "Dynamikrot", description: "Deutet Energie, Durchsetzungskraft und Entschlossenheit an. Zielstrebig, energiegeladen, handlungsorientiert.", colorClass: "bg-red-500", textClass: "text-red-600", borderClass: "border-red-500", characteristics: { strengths: "entschlossen, willensstark, ergebnisorientiert, direkt, wettbewerbsorientiert, schnell entscheidend", challenges: "ungeduldig, kann andere überfordern, geringe Detailorientierung bei Routine, risikofreudig, kann Gefühle anderer übersehen", motivation: "Ergebnisse, Herausforderung, Kontrolle, Gewinnen, Unabhängigkeit", communication: "direkt, auf den Punkt, fordernd, ergebnisorientiert"}},
@@ -474,14 +479,18 @@ const translations = {
     generalColorDescriptionsTitle: "General Color Descriptions:",
     importantNoticeTitle: "Important Notice:",
     importantNoticeText: "These results and analyses are for self-reflection and entertainment purposes only. They do not constitute a scientifically validated psychological diagnosis and are not affiliated with or derived from official testing procedures or other protected systems. Please interpret the results thoughtfully.",
+    basisDisclaimer: "The concept and content of this application are based on publicly available information and general publications on the subject of personality tests and color psychology.",
     restart: "Restart",
     privacyPolicyLink: "Privacy Policy",
     privacyPolicyButtonClose: "Close",
     progressLabel: "Progress",
     questionLabel: (current, total) => `Question ${current}${total ? ` of ${total}` : ''}`,
     ratingTableHeader: "Statement",
-    ratingTableRatingColHeader: "Applies...",
+    ratingTableRatingColHeader: "Applies to", 
     noResultsYet: "Please complete the questionnaire first to see your results.",
+    shareableResultTitle: "Your Shareable Color Profile:",
+    copyTypeButtonLabel: "Copy Type Visual",
+    copiedMessage: "Copied!",
     introductionPage: { 
         appShortDescription: "Discover your professional personality preferences and get an initial assessment of your color type.",
         welcomeMessage: "This questionnaire helps you discover your personality preferences based on four different color types:",
@@ -542,15 +551,16 @@ const translations = {
         yourRightsText2: "You have the right to withdraw any consent given at any time with effect for the future (e.g., by leaving the page).",
         cookiesTitle: "Cookies",
         cookiesText: "This application does not use cookies to track or analyze your behavior.",
+        basisDisclaimerPrivacy: "The concept and content of this application are based on publicly available information and general publications on the subject of personality tests and color psychology. There is no connection to specific, protected testing procedures.",
         finalRemarkTitle: "Final Remark",
         finalRemarkText: "This privacy policy is for your information."
     },
     questionTexts: enQuestionTexts, 
     ratingLabels: [
-      { value: 6, label: "Applies very much", short: "Very much", suffix: "very much", mobileSuffix: "Absolutely" },
-      { value: 3, label: "Applies", short: "Applies", suffix: "applies", mobileSuffix: "Yes" },
-      { value: 2, label: "Applies less", short: "Less so", suffix: "less so", mobileSuffix: "So-so" },
-      { value: 0, label: "Applies least", short: "Not at all", suffix: "not at all", mobileSuffix: "Rather not" },
+      { value: 6, label: "Applies very much", short: "Very much", suffix: "Absolutely", mobileSuffix: "Absolutely" },
+      { value: 3, label: "Applies", short: "Applies", suffix: "Yes", mobileSuffix: "Yes" },
+      { value: 2, label: "Applies less", short: "Less so", suffix: "So-so", mobileSuffix: "So-so" },
+      { value: 0, label: "Applies least", short: "Not at all", suffix: "Rather not", mobileSuffix: "Rather not" },
     ],
     colorDescriptions: {
       Dynamikrot: { name: "Dynamic Red", description: "Suggests energy, assertiveness, and determination. Goal-oriented, energetic, action-oriented.", colorClass: "bg-red-500", textClass: "text-red-600", borderClass: "border-red-500", characteristics: { strengths: "decisive, strong-willed, results-oriented, direct, competitive, quick decision-maker", challenges: "impatient, can overwhelm others, low detail orientation in routine tasks, risk-taker, can overlook others' feelings", motivation: "results, challenge, control, winning, independence", communication: "direct, to the point, demanding, results-oriented"}},
@@ -656,11 +666,12 @@ const IntroductionPage = ({ onStartQuiz, currentLangData }) => {
   const { introductionPage, colorDescriptions: currentCDs, ratingLabels: currentRLs, appName, startQuiz } = currentLangData;
   return (
     <div className="bg-white p-4 md:p-8 rounded-xl shadow-2xl w-full max-w-3xl text-center animate-fadeIn">
+      <img src="/logo192.png" alt="App Logo" className="mx-auto mb-4" /> {/* Updated Logo Path */}
       <h1 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mb-6">{appName}</h1>
-      <p className="text-base md:text-lg text-gray-700 mb-4">{introductionPage.appShortDescription}</p>
       <p className="text-base md:text-lg text-gray-700 mb-6">
-        {introductionPage.welcomeMessage}
+        {introductionPage.appShortDescription}
       </p>
+      {/* Removed redundant welcomeMessage paragraph */}
       <div className="flex justify-center mb-6 md:mb-8">
         <table className="w-full mx-auto">
           <tbody>
@@ -735,10 +746,8 @@ const QuestionDisplay = ({
     return <div className="text-center p-8">Loading question...</div>;
   }
 
-  // Removed animate-fadeIn from the root div to prevent re-animation on rating clicks.
-  // The key on the QuestionDisplay instance in App.js will handle mount animation for new questions.
   return (
-    <div className="bg-white p-4 md:p-6 rounded-xl shadow-2xl w-full max-w-4xl"> 
+    <div className="bg-white p-4 md:p-6 rounded-xl shadow-2xl w-full max-w-4xl">
       <div className="mb-6">
         <div className="flex justify-between items-center text-sm text-gray-600 mb-1">
           <span>{progressLabel}</span>
@@ -816,7 +825,7 @@ const QuestionDisplay = ({
                         `}
                         disabled={usedScoresInQuestion.has(rating.value) && selectedScore !== rating.value}
                       >
-                          {rating.suffix}
+                          {rating.suffix} {/* Using suffix for desktop as well now */}
                       </button>
                     </td>
                   ))}
@@ -858,7 +867,7 @@ const QuestionDisplay = ({
                     `}
                     disabled={usedScoresInQuestion.has(rating.value) && selectedScore !== rating.value}
                   >
-                    {rating.mobileSuffix}
+                    {rating.suffix} {/* Using suffix for mobile as well now */}
                   </button>
                 ))}
               </div>
@@ -894,6 +903,83 @@ const QuestionDisplay = ({
   );
 };
 
+// Component for Shareable Type Visualization
+const ShareableTypeVisual = ({ sortedResults, colorDescriptions, colorHexMap, typeString, currentLangData }) => {
+    const [copiedStatus, setCopiedStatus] = useState('');
+
+    const colorEmojiMap = {
+        Dynamikrot: '🔴',
+        Freigeistgelb: '🟡',
+        Balancegrün: '🟢',
+        Logikblau: '🔵',
+    };
+
+    const initialsMap = {
+        Dynamikrot: 'D',
+        Freigeistgelb: 'F',
+        Balancegrün: 'B',
+        Logikblau: 'L',
+    };
+    
+    const handleCopy = () => {
+        // Use the appName for the title of the copied text
+        let textToCopy = `${currentLangData.appName} - ${currentLangData.resultsTitle}\n`;
+        textToCopy += sortedResults.map(item => {
+            const initial = initialsMap[item.name];
+            return `${colorEmojiMap[item.name]}${item.percentage >= 30 ? initial.toUpperCase() : initial.toLowerCase()}`;
+        }).join(' ') + '\n';
+        // Use the already translated and formatted typeString from colorCompassTypeInfo
+        textToCopy += `${typeString}\n`; 
+        sortedResults.forEach(item => {
+            textToCopy += `${colorDescriptions[item.name].name}: ${item.percentage.toFixed(1)}%\n`;
+        });
+
+        const textarea = document.createElement('textarea');
+        textarea.value = textToCopy;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            setCopiedStatus(currentLangData.copiedMessage);
+        } catch (err) {
+            console.error('Kopieren fehlgeschlagen:', err);
+            setCopiedStatus('Fehler beim Kopieren'); // Fallback message
+        }
+        document.body.removeChild(textarea);
+        setTimeout(() => setCopiedStatus(''), 2000);
+    };
+
+    return (
+        <div className="mt-8 p-4 bg-gray-50 rounded-lg shadow">
+            <h3 className="text-lg md:text-xl font-semibold text-gray-700 mb-3 text-center">{currentLangData.shareableResultTitle}</h3>
+            <div className="flex justify-center space-x-2 mb-4">
+                {sortedResults.map(item => {
+                    const initial = initialsMap[item.name];
+                    const displayInitial = item.percentage >= 30 ? initial.toUpperCase() : initial.toLowerCase();
+                    return (
+                        <div key={item.name}
+                             title={`${colorDescriptions[item.name].name}: ${item.percentage.toFixed(1)}%`}
+                             className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md ${colorDescriptions[item.name].colorClass}`}
+                             style={{ backgroundColor: colorHexMap[item.name]}} 
+                        >
+                            {displayInitial}
+                        </div>
+                    );
+                })}
+            </div>
+            <div className="text-center">
+                <button
+                    onClick={handleCopy}
+                    className="px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold text-sm hover:bg-indigo-700 shadow-md hover:shadow-lg transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1"
+                >
+                    {currentLangData.copyTypeButtonLabel}
+                </button>
+                {copiedStatus && <p className="text-sm text-green-600 mt-2">{copiedStatus}</p>}
+            </div>
+        </div>
+    );
+};
+
 
 // Component for Displaying Results
 const ResultsDisplay = ({ 
@@ -907,7 +993,7 @@ const ResultsDisplay = ({
   const { 
     resultsTitle, pieChartTitle, percentageDistributionTitle, noPieData, individualAssessmentTitle, 
     generalColorDescriptionsTitle, 
-    importantNoticeTitle, importantNoticeText, restart, noResultsYet
+    importantNoticeTitle, importantNoticeText, basisDisclaimer, restart, noResultsYet
   } = currentLangData;
   const currentCDs = currentLangData.colorDescriptions;
 
@@ -982,24 +1068,35 @@ const ResultsDisplay = ({
 
             <div className="lg:col-span-3 bg-gray-50 p-4 rounded-lg shadow-inner">
                 <h3 className="text-lg md:text-xl font-semibold text-gray-700 mb-4 text-center">{percentageDistributionTitle}</h3>
-                {pieChartDataSortedByPercentage.map(item => (
-                <div key={item.name} className="flex items-center mb-3">
-                    <div className={`w-4 h-4 md:w-5 md:h-5 rounded-full mr-2 md:mr-3 shrink-0 ${currentCDs[item.name].colorClass}`}></div>
-                    <span className="text-sm md:text-base font-medium text-gray-800 w-28 md:w-32 shrink-0">{currentCDs[item.name].name}:</span>
-                    <div className="flex-grow bg-gray-200 rounded-full h-5 md:h-6 relative overflow-hidden" title={`${item.percentage.toFixed(1)}% (${item.score} Punkte)`}>
-                    <div
-                        className={`${currentCDs[item.name].colorClass} h-full rounded-l-full flex items-center justify-end pr-2 transition-all duration-700 ease-out`}
-                        style={{ width: `${Math.max(0, item.percentage)}%`, minWidth: item.percentage > 0.1 ? '18px' : '0px' }} 
-                    >
-                        <span className="text-xs font-semibold text-white opacity-90 ml-1">{item.percentage > 7 ? `${item.percentage.toFixed(1)}%` : ''}</span>
-                    </div>
-                    </div>
-                </div>
-                ))}
+                {pieChartDataSortedByPercentage.map(item => {
+                    const barDisplayPercentage = Math.min(100, (item.percentage / 60) * 100);
+                    return (
+                        <div key={item.name} className="flex items-center mb-3">
+                            <div className={`w-4 h-4 md:w-5 md:h-5 rounded-full mr-2 md:mr-3 shrink-0 ${currentCDs[item.name].colorClass}`}></div>
+                            <span className="text-sm md:text-base font-medium text-gray-800 w-28 md:w-32 shrink-0">{currentCDs[item.name].name}:</span>
+                            <div className="flex-grow bg-gray-200 rounded-full h-5 md:h-6 relative overflow-hidden" title={`${item.percentage.toFixed(1)}% (${item.score} Punkte)`}>
+                            <div
+                                className={`${currentCDs[item.name].colorClass} h-full rounded-l-full flex items-center justify-end pr-2 transition-all duration-700 ease-out`}
+                                style={{ width: `${Math.max(0, barDisplayPercentage)}%`, minWidth: barDisplayPercentage > 0.1 ? '18px' : '0px' }} 
+                            >
+                                <span className="text-xs font-semibold text-white opacity-90 ml-1">{item.percentage > 7 ? `${item.percentage.toFixed(1)}%` : ''}</span>
+                            </div>
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
           </div>
+
+          <ShareableTypeVisual 
+            sortedResults={pieChartDataSortedByPercentage}
+            colorDescriptions={currentCDs}
+            colorHexMap={colorHexMap}
+            typeString={colorCompassType.typeString}
+            currentLangData={currentLangData}
+          />
          
-          <div className="mb-8">
+          <div className="mb-8 mt-8"> 
             <h3 className="text-xl md:text-2xl font-semibold text-gray-700 mb-4">{individualAssessmentTitle}</h3>
             <div className="text-gray-700 leading-relaxed bg-indigo-50 p-4 rounded-lg border border-indigo-200 prose prose-sm sm:prose-base max-w-none shadow" dangerouslySetInnerHTML={{ __html: individualAssessmentText }}></div>
           </div>
@@ -1030,6 +1127,7 @@ const ResultsDisplay = ({
      
       <div className="mt-8 p-4 bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 rounded-r-lg text-sm shadow">
         <p><strong>{importantNoticeTitle}</strong> {importantNoticeText}</p>
+        <p className="mt-2">{basisDisclaimer}</p>
       </div>
 
       <div className="flex justify-center mt-8 space-x-4">
@@ -1072,6 +1170,8 @@ const PrivacyPolicyPage = ({ onClose, currentLangData }) => {
                 <p>{ppContent.yourRightsText2}</p>
                 <h3 className="text-xl font-semibold mt-4 mb-2">{ppContent.cookiesTitle}</h3>
                 <p>{ppContent.cookiesText}</p>
+                <h3 className="text-xl font-semibold mt-4 mb-2">{currentLangData.basisDisclaimer}</h3> {/* Using the general disclaimer key */}
+                <p>{ppContent.basisDisclaimerPrivacy}</p> {/* Specific text for privacy page */}
                 <h3 className="text-xl font-semibold mt-4 mb-2">{ppContent.finalRemarkTitle}</h3>
                 <p>{ppContent.finalRemarkText}</p>
                 <button
@@ -1279,9 +1379,7 @@ function App() {
         assessment += `- <strong>${currentCDs[fourth.name].name}:</strong> ${fourth.percentage.toFixed(1)}% <br /><br />`;
 
         const firstColorDetails = currentCDs[first.name].characteristics;
-        // secondColorDetails is not explicitly used here for its properties in the emphasis texts,
-        // but its name and percentage are used. Combo texts use names.
-        // const secondColorDetails = currentCDs[second.name].characteristics; 
+        const secondColorDetails = currentCDs[second.name].characteristics; 
 
         if (first.percentage - second.percentage > 3) { 
              assessment += assessmentTextParts.balancedStrongestEmphasis(
